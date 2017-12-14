@@ -1,4 +1,8 @@
 const { assert } = require('chai');
+var chai = require("chai"),
+expect = chai.expect; // preference and tested with expect 
+ 
+chai.use(require("chai-sorted"));
 const mergeSort = require('../lib/mergeSort.js');
 
 describe('mergeSort', function() {
@@ -54,6 +58,7 @@ describe('mergeSort', function() {
   it('should sort a large random array', function() {
     mergeSort(randomArray);
     assert.equal(randomArray.length, num);
+    expect(mergeSort(randomArray)).to.be.sorted();
   })
 
 });

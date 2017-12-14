@@ -1,4 +1,8 @@
 const { assert } = require('chai');
+var chai = require("chai"),
+expect = chai.expect; // preference and tested with expect 
+ 
+chai.use(require("chai-sorted"));
 const insertionSort = require('../lib/insertionSort.js');
 
 describe('insertionSort', function() {
@@ -14,7 +18,7 @@ describe('insertionSort', function() {
     staticArr = [4, 3, 2, 1];
     letterArr = ['b', 'c', 'd', 'a'];
     randomArray =  [];
-    num = 12000;
+    num = 10000;
 
     for(let i = 0; i < num; i++) {
       randomArray.push(Math.floor(Math.random() * num + 1));
@@ -78,6 +82,7 @@ describe('insertionSort', function() {
   it('should sort a large random array', function() {
     insertionSort(randomArray);
     assert.equal(randomArray.length, num);
+    expect(insertionSort(randomArray)).to.be.sorted();
   })
 
 });

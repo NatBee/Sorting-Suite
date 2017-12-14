@@ -1,4 +1,8 @@
 const { assert } = require('chai');
+var chai = require("chai"),
+expect = chai.expect; // preference and tested with expect 
+ 
+chai.use(require("chai-sorted"));
 const bubbleSort = require('../lib/bubbleSort.js');
 
 describe('bubbleSort', function() {
@@ -13,7 +17,7 @@ describe('bubbleSort', function() {
     staticArr = [4, 3, 2, 1];
     letterArr = ['b', 'c', 'd', 'a'];
     randomArray =  [];
-    num = 9000;
+    num = 7000;
 
     for(let i = 0; i < num; i++) {
       randomArray.push(Math.floor(Math.random() * num + 1));
@@ -88,5 +92,6 @@ describe('bubbleSort', function() {
    it('should sort a large random array', function() {
     bubbleSort(randomArray);
     assert.equal(randomArray.length, num);
+    expect(bubbleSort(randomArray)).to.be.sorted();
   })
 })
