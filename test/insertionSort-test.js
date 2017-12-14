@@ -14,7 +14,7 @@ describe('insertionSort', function() {
     staticArr = [4, 3, 2, 1];
     letterArr = ['b', 'c', 'd', 'a'];
     randomArray =  [];
-    num = 13000;
+    num = 12000;
 
     for(let i = 0; i < num; i++) {
       randomArray.push(Math.floor(Math.random() * num + 1));

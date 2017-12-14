@@ -13,7 +13,7 @@ describe('quickSort', function() {
 
   beforeEach( function() {
     randomArray =  [];
-    num = 770000;
+    num = 740000;
 
     for(let i = 0; i < num; i++) {
       randomArray.push(Math.floor(Math.random() * num + 1));
